@@ -124,7 +124,7 @@ namespace ProvidirectorGame
             }
         }
 
-        public List<CharacterMaster> spawnedCharacters;
+        public List<uint> spawnedCharacters;
 
         public static List<SpawnCard> spawnCardTemplates;
 
@@ -183,7 +183,7 @@ namespace ProvidirectorGame
                 }
             };
             eliteTierIndex = EliteTierIndex.Normal;
-            spawnedCharacters = new List<CharacterMaster>();
+            spawnedCharacters = new List<uint>();
             if (!serverSpawnMode) {
                 Debug.Log("Starting new Director in Client Mode");
                 TeleporterInteraction.onTeleporterBeginChargingGlobal += TeleportBoost;
@@ -202,7 +202,7 @@ namespace ProvidirectorGame
                 burstCharge -= burstLossRate * Time.deltaTime;
                 if (burstCharge <= 0)
                 {
-                    burstCharge = serverSpawnMode ? 100 : 0;
+                    burstCharge = 0;
                     bursting = false;
                 }
             }
@@ -243,16 +243,10 @@ namespace ProvidirectorGame
             NodeGraph nodeGraph = SceneInfo.instance.GetNodeGraph(card.nodeGraphType);
             if (nodeGraph == null) return (-1, null);
             GameObject bodyGameObject;
-            Debug.LogFormat("Base spawn position: {0}", position);
-            if (!snapToNearestNode) Debug.LogFormat("Spawncard {0} uses {1} nodegraph, but snapping is off.", card, card.nodeGraphType);
-            else {
-                // Nearest Valid node, no overhead prevention
-                Debug.LogFormat("Spawncard {0} uses {1} nodegraph", card, card.nodeGraphType);
-                if (card.nodeGraphType == MapNodeGroup.GraphType.Ground) {
-                    NodeGraph.NodeIndex nodeIndex = nodeGraph.FindClosestNodeWithFlagConditions(position, card.hullSize, NodeFlags.None, NodeFlags.None, false);
-                    if (nodeGraph.GetNodePosition(nodeIndex, out position)) Debug.LogFormat("Modified spawn position: {0}", position);
-                    else Debug.Log("Error: Failed to find valid snapping node. Defaulting to direct spawn.");
-                } else Debug.Log("Skipping spawn modification for non-grounded enemy");
+            if (snapToNearestNode && card.nodeGraphType == MapNodeGroup.GraphType.Ground) {
+                NodeGraph.NodeIndex nodeIndex = nodeGraph.FindClosestNodeWithFlagConditions(position, card.hullSize, NodeFlags.None, NodeFlags.None, false);
+                if (!nodeGraph.GetNodePosition(nodeIndex, out position)) Debug.Log("Error: Failed to find valid snapping node. Defaulting to direct spawn.");
+                else position.y += HullDef.Find(card.hullSize).height;
             }
             bodyGameObject = UnityEngine.Object.Instantiate<GameObject>(preinst, position, rotation);
             CharacterMaster master = bodyGameObject.GetComponent<CharacterMaster>();
@@ -341,12 +335,7 @@ namespace ProvidirectorGame
 
         public bool ApplyFrenzy()
         {
-            if (burstCharge < 100 || bursting)
-            {
-                OnBurstFail?.Invoke();
-                return false;
-            }
-            if (!serverSpawnMode) return true;
+            if (!serverSpawnMode) return !(burstCharge < 100 || bursting);
             bursting = true;
             burstCharge = 100;
             foreach (TeamComponent c in TeamComponent.GetTeamMembers(TeamIndex.Monster))
@@ -363,18 +352,20 @@ namespace ProvidirectorGame
                 OnBurstStart?.Invoke();
             } else OnBurstFail?.Invoke();
         }
+
         public void DoPurchaseTrigger(float value, CharacterMaster spawned = null) {
             if (value >= 0) {
                 credits -= value;
                 if (spawned) {
                     UnityAction HandleCharacterDeath = null;
                     HandleCharacterDeath = delegate () {
-                        spawnedCharacters.Remove(spawned);
+                        spawnedCharacters.Remove(spawned.netId.Value);
                         isDirty = true;
                         spawned.onBodyDeath.RemoveListener(HandleCharacterDeath);
                     };
-                    spawnedCharacters.Add(spawned);
+                    spawnedCharacters.Add(spawned.netId.Value);
                     spawned.onBodyDeath.AddListener(HandleCharacterDeath);
+                    Debug.LogFormat("Added spawned character with ID {0} (Now {1} instances)", spawned.netId.Value, spawnedCharacters.Count);
                 } else {
                     Debug.Log("Purchase triggered with no spawn tied to it.");
                 }
@@ -384,9 +375,11 @@ namespace ProvidirectorGame
         }
         private void ChargeOnDamage(DamageDealtMessage msg)
         {
-            if (msg.attacker == null) return;
+            if (msg.attacker == null || serverSpawnMode) return;
             CharacterMaster attacker = msg.attacker.GetComponent<CharacterMaster>();
-            if (spawnedCharacters.Contains(attacker) && burstCharge < 100 && !bursting)
+            Debug.LogFormat("Damage dealt by {0}", attacker.netId.Value);
+            Debug.LogFormat("{0} && {1} && {2}", spawnedCharacters.Contains(attacker.netId.Value), burstCharge < 100, !bursting);
+            if (spawnedCharacters.Contains(attacker.netId.Value) && burstCharge < 100 && !bursting)
             {
                 burstCharge += msg.damage / maxBoostCharge * 100f;
                 if (burstCharge >= 100)

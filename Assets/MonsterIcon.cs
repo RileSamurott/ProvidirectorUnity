@@ -38,7 +38,6 @@ namespace ProvidirectorGame
             string iconName = cmprefab.name.Replace("Master", "Icon");
             if (!iconDB.ContainsKey(iconName))
             {
-                Debug.LogWarningFormat("Unable to find icon {0}.", iconName);
                 if (!iconDB.ContainsKey("DefaultIcon")) Debug.LogErrorFormat("Unable to find fallback icon!");
                 else icon.sprite = iconDB["DefaultIcon"];
             }

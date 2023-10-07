@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2386589804
+CRC: 1302685331
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cf5fc4d1e4f15c58359d00129cefaf69
+    Hash: 4b131c2dd2b45a2aba191dcce403d4f2
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b9668b6885901097ea1a8e52b7317612
+    Hash: d0edb5f70c52e654b143817c127664ef
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -63,18 +63,16 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/HBStyle.asset
 - Assets/TextMesh Pro/Fonts/LiberationSans.ttf
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
-- Assets/texUIMainRect.png
 - Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
 - Assets/BarPrefab.prefab
 - Assets/ProvidirectorUIRoot.prefab
 - Assets/ServerDirectorPrefab.prefab
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
-- Assets/HBStyle.asset
 - Assets/whitepixel.png
-- Assets/texUINonsegmentedHealthbar.png
 - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
 - Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd

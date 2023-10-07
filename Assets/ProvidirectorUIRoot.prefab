@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 637974714, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  style: {fileID: 11400000, guid: 3927003dbb12a90409b4d13fec0747dc, type: 2}
+  style: {fileID: 11400000, guid: cf6b554033e965e488f831ec1751e99a, type: 2}
   barContainer: {fileID: 3497246024936803238}
   eliteBackdropRectTransform: {fileID: 0}
   criticallyHurtImage: {fileID: 0}

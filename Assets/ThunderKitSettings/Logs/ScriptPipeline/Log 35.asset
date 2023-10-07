@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9af1c6015733a42be940cc462aa7ed, type: 3}
+  m_Name: Log 35
+  m_EditorClassIdentifier: 
+  pipeline: {fileID: 11400000, guid: 4fb25248935389d46b35f3b11e4b3695, type: 2}
+  creationDate:
+    ticks: 638323011460876995
+  entries:
+  - logLevel: 2
+    internalTime:
+      ticks: 638323011466359963
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      StageAssemblies terminated'
+    context:
+    - "Stacktrace\r\nStageAssemblies terminated\r\n\r\n  at ThunderKit.Core.Pipelines.Jobs.StageAssemblies+<Build>d__8.MoveNext
+      () [0x003bb] in [C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Jobs\\StageAssemblies.cs:189](exceptionsource://C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Jobs\\StageAssemblies.cs#189)
+      \r\n\r\n--- End of stack trace from previous location where exception was thrown
+      ---\r\n\r\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw
+      () [0x0000c] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at ThunderKit.Core.Pipelines.Jobs.StageAssemblies+<Execute>d__7.MoveNext
+      () [0x00254] in [C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Jobs\\StageAssemblies.cs:126](exceptionsource://C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Jobs\\StageAssemblies.cs#126)
+      \r\n\r\n--- End of stack trace from previous location where exception was thrown
+      ---\r\n\r\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw
+      () [0x0000c] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at ThunderKit.Core.Pipelines.Jobs.StageAssemblies+<Execute>d__7.MoveNext
+      () [0x00331] in [C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Jobs\\StageAssemblies.cs:132](exceptionsource://C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Jobs\\StageAssemblies.cs#132)
+      \r\n\r\n--- End of stack trace from previous location where exception was thrown
+      ---\r\n\r\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw
+      () [0x0000c] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at ThunderKit.Core.Pipelines.Pipeline+<ExecuteJob>d__47.MoveNext
+      () [0x0002a] in [C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Pipeline.cs:281](exceptionsource://C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Pipeline.cs#281)
+      \r\n\r\n--- End of stack trace from previous location where exception was thrown
+      ---\r\n\r\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw
+      () [0x0000c] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at ThunderKit.Core.Pipelines.Pipeline+<ExecuteManifestLoop>d__51.MoveNext
+      () [0x00085] in [C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Pipeline.cs:295](exceptionsource://C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Pipeline.cs#295)
+      \r\n\r\n--- End of stack trace from previous location where exception was thrown
+      ---\r\n\r\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw
+      () [0x0000c] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \r\n\r\n  at ThunderKit.Core.Pipelines.Pipeline+<Execute>d__44.MoveNext
+      () [0x003ae] in [C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Pipeline.cs:225](exceptionsource://C:\\Users\\chenh\\ProvidirectorUnity\\Library\\PackageCache\\com.passivepicasso.thunderkit@2cce48d97a\\Editor\\Core\\Pipelines\\Pipeline.cs#225) "
+  - logLevel: 2
+    internalTime:
+      ticks: 638323011466157370
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Build Failed: ``` ThunderKit/Libraries/ScriptsAssembly.dll ``` with 6 errors.'
+    context:
+    - 'Assets\DirectorState.cs (362:50)
+
+      [Assets\DirectorState.cs(362,50):
+      error CS1503: Argument 1: cannot convert from ''UnityEngine.Networking.NetworkInstanceId''
+      to ''uint''](exceptionsource://C:\Users\chenh\ProvidirectorUnity\Assets\DirectorState.cs#362)'
+    - 'Assets\DirectorState.cs (366:43)
+
+      [Assets\DirectorState.cs(366,43):
+      error CS1503: Argument 1: cannot convert from ''UnityEngine.Networking.NetworkInstanceId''
+      to ''uint''](exceptionsource://C:\Users\chenh\ProvidirectorUnity\Assets\DirectorState.cs#366)'
+    - 'Assets\DirectorState.cs (380:13)
+
+      [Assets\DirectorState.cs(380,13):
+      error CS1061: ''CharacterMaster'' does not contain a definition for ''Debug''
+      and no accessible extension method ''Debug'' accepting a first argument of
+      type ''CharacterMaster'' could be found (are you missing a using directive
+      or an assembly reference?)](exceptionsource://C:\Users\chenh\ProvidirectorUnity\Assets\DirectorState.cs#380)'
+    - 'Assets\DirectorState.cs (381:77)
+
+      [Assets\DirectorState.cs(381,77):
+      error CS1503: Argument 1: cannot convert from ''UnityEngine.Networking.NetworkInstanceId''
+      to ''uint''](exceptionsource://C:\Users\chenh\ProvidirectorUnity\Assets\DirectorState.cs#381)'
+    - 'Assets\DirectorState.cs (382:44)
+
+      [Assets\DirectorState.cs(382,44):
+      error CS1503: Argument 1: cannot convert from ''UnityEngine.Networking.NetworkInstanceId''
+      to ''uint''](exceptionsource://C:\Users\chenh\ProvidirectorUnity\Assets\DirectorState.cs#382)'
+    - 'Assets\DirectorState.cs (380:52)
+
+      [Assets\DirectorState.cs(380,52):
+      error CS0165: Use of unassigned local variable ''attacker''](exceptionsource://C:\Users\chenh\ProvidirectorUnity\Assets\DirectorState.cs#380)'
+  - logLevel: 0
+    internalTime:
+      ticks: 638323011463514622
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Building : ThunderKit/Libraries/ScriptsAssembly.dll'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638323011461493399
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Execute Job'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638323011461425731
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Clearing PipelineJob error states'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638323011461395742
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Execute Pipeline'
+    context: []
