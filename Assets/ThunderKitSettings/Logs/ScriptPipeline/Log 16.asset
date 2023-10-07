@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9af1c6015733a42be940cc462aa7ed, type: 3}
+  m_Name: Log 16
+  m_EditorClassIdentifier: 
+  pipeline: {fileID: 11400000, guid: 4fb25248935389d46b35f3b11e4b3695, type: 2}
+  creationDate:
+    ticks: 638320100171175010
+  entries:
+  - logLevel: 2
+    internalTime:
+      ticks: 638320100256537090
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      StageAssemblies terminated'
+    context:
+    - "Stacktrace\r\nStageAssemblies terminated\r\n\r\n  at ThunderKit.Core.Pipelines.Jobs.StageAssemblies+<Build>d__8.MoveNext
+      () [0x003bb] in [/Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Jobs/StageAssemblies.cs:189](exceptionsource:///Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Jobs/StageAssemblies.cs#189)
+      \n--- End of stack trace from previous location where exception was thrown
+      ---\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000c]
+      in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at ThunderKit.Core.Pipelines.Jobs.StageAssemblies+<Execute>d__7.MoveNext
+      () [0x00254] in [/Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Jobs/StageAssemblies.cs:126](exceptionsource:///Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Jobs/StageAssemblies.cs#126)
+      \n--- End of stack trace from previous location where exception was thrown
+      ---\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000c]
+      in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at ThunderKit.Core.Pipelines.Jobs.StageAssemblies+<Execute>d__7.MoveNext
+      () [0x00331] in [/Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Jobs/StageAssemblies.cs:132](exceptionsource:///Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Jobs/StageAssemblies.cs#132)
+      \n--- End of stack trace from previous location where exception was thrown
+      ---\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000c]
+      in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at ThunderKit.Core.Pipelines.Pipeline+<ExecuteJob>d__47.MoveNext
+      () [0x0002a] in [/Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Pipeline.cs:281](exceptionsource:///Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Pipeline.cs#281)
+      \n--- End of stack trace from previous location where exception was thrown
+      ---\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000c]
+      in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at ThunderKit.Core.Pipelines.Pipeline+<ExecuteManifestLoop>d__51.MoveNext
+      () [0x00085] in [/Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Pipeline.cs:295](exceptionsource:///Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Pipeline.cs#295)
+      \n--- End of stack trace from previous location where exception was thrown
+      ---\n  at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw () [0x0000c]
+      in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess
+      (System.Threading.Tasks.Task task) [0x0003e] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification
+      (System.Threading.Tasks.Task task) [0x00028] in <eae584ce26bc40229c1b1aa476bfa589>:0
+      \n  at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd (System.Threading.Tasks.Task
+      task) [0x00008] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at System.Runtime.CompilerServices.TaskAwaiter.GetResult
+      () [0x00000] in <eae584ce26bc40229c1b1aa476bfa589>:0 \n  at ThunderKit.Core.Pipelines.Pipeline+<Execute>d__44.MoveNext
+      () [0x003ae] in [/Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Pipeline.cs:225](exceptionsource:///Users/dacityp/Downloads/ThunderKit-7.1.2/Editor/Core/Pipelines/Pipeline.cs#225) "
+  - logLevel: 2
+    internalTime:
+      ticks: 638320100255381890
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Build Failed: ``` ThunderKit/Libraries/ScriptsAssembly.dll ``` with 2 errors.'
+    context:
+    - 'Assets/DirectorState.cs (249:34)
+
+      [Assets/DirectorState.cs(249,34):
+      error CS0029: Cannot implicitly convert type ''int'' to ''(float, RoR2.CharacterMaster)''](exceptionsource:///Users/dacityp/Projects/Blankproj/Assets/DirectorState.cs#249)'
+    - 'Assets/DirectorState.cs (251:43)
+
+      [Assets/DirectorState.cs(251,43):
+      error CS0029: Cannot implicitly convert type ''int'' to ''(float, RoR2.CharacterMaster)''](exceptionsource:///Users/dacityp/Projects/Blankproj/Assets/DirectorState.cs#251)'
+  - logLevel: 0
+    internalTime:
+      ticks: 638320100180621650
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Building : ThunderKit/Libraries/ScriptsAssembly.dll'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638320100173464710
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)
+      Execute Job'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638320100173144410
+    message: '[ScriptPipeline](assetlink://Assets%2fScriptPipeline.asset) Clearing
+      PipelineJob error states'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638320100172492170
+    message: '[ScriptPipeline](assetlink://Assets%2fScriptPipeline.asset) Execute
+      Pipeline'
+    context: []

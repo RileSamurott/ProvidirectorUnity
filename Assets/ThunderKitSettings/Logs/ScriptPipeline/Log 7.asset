@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9af1c6015733a42be940cc462aa7ed, type: 3}
+  m_Name: Log 7
+  m_EditorClassIdentifier: 
+  pipeline: {fileID: 11400000, guid: 4fb25248935389d46b35f3b11e4b3695, type: 2}
+  creationDate:
+    ticks: 638319267891739800
+  entries:
+  - logLevel: 0
+    internalTime:
+      ticks: 638319267896786420
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)[Manifest](assetlink://Assets%2fManifest.asset)
+      Build Completed: ```  ```'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638319267892618970
+    message: '[ScriptPipeline(0 - StageAssemblies)](assetlink://Assets%2fScriptPipeline.asset)
+      Execute Job'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638319267892478250
+    message: '[ScriptPipeline](assetlink://Assets%2fScriptPipeline.asset) Clearing
+      PipelineJob error states'
+    context: []
+  - logLevel: 0
+    internalTime:
+      ticks: 638319267892344770
+    message: '[ScriptPipeline](assetlink://Assets%2fScriptPipeline.asset) Execute
+      Pipeline'
+    context: []

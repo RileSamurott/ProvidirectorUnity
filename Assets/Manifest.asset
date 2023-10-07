@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8957087301249781735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22bb7fd1d3b56a48bc52f8e407901d6, type: 3}
+  m_Name: ManifestIdentity
+  m_EditorClassIdentifier: 
+  StagingPaths:
+  - Assets/Output
+  Author: DacityP
+  Name: ProvidirectorUI
+  Description: User Interface for the Game Director.
+  Version: 0.0.1
+  Dependencies: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e563561e08b6a3642a487177f5cfbb37, type: 3}
+  m_Name: Manifest
+  m_EditorClassIdentifier: 
+  Data:
+  - {fileID: -8957087301249781735}
+  - {fileID: 5305972361434204887}
+  - {fileID: 1984534478085967207}
+  identity: {fileID: -8957087301249781735}
+  QuickAccess: 0
+--- !u!114 &1984534478085967207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d1008b78cb6e846889b7778282fbef, type: 3}
+  m_Name: AssetBundleDefinitions
+  m_EditorClassIdentifier: 
+  StagingPaths:
+  - Assets/Output
+  assetBundles:
+  - assetBundleName: ProvidirectorCore
+    assets:
+    - {fileID: 5077069507262785400, guid: 0d56506b4e61b0649a403118a322b957, type: 3}
+    - {fileID: 5461552067830020283, guid: ef43e97b575a243fa8996a17818f0c92, type: 3}
+    - {fileID: 5664333109779333978, guid: 33ac533f0423f43c98a2c196f2479f67, type: 3}
+  - assetBundleName: MonsterIcons
+    assets:
+    - {fileID: 2800000, guid: 646b2bdcafcea284b96e2dde3f8107ef, type: 3}
+    - {fileID: 2800000, guid: f68ecfbe13de8424cbddad4c0c3d5839, type: 3}
+    - {fileID: 2800000, guid: 887e9315a7429564ba66c52628063ce2, type: 3}
+--- !u!114 &5305972361434204887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7e13dda513544419a89926bd12ad8a, type: 3}
+  m_Name: AssemblyDefinitions
+  m_EditorClassIdentifier: 
+  StagingPaths: []
+  definitions:
+  - {fileID: 5897886265953266890, guid: c9fcf4cf423148347920343c4fe479ca, type: 3}

@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 1670402459
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: providirectorcore
+      Dependencies: {}
+    Info_1:
+      Name: monstericons
+      Dependencies: {}
