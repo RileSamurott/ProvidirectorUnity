@@ -72,7 +72,7 @@ namespace ProvidirectorGame
             set {
                 _focusTarget = value;
                 if (focusTarget != null && focusTarget?.GetBodyObject() != null) focusBar.targetText.text = Util.GetBestBodyName(focusTarget.GetBodyObject());
-                else focusBar.targetText.text = "No Target";
+                else focusBar.targetText.text = "Auto";
             }
         }
 
@@ -118,9 +118,6 @@ namespace ProvidirectorGame
                 case SpawnFailReason.SpawnLimitReached:
                     Notify("Spawn limit reached!");
                     break;
-                case SpawnFailReason.ServerSpawnFail:
-                    Notify("Failed to summon character!");
-                    break;
                 default:
                     Notify("Failed to summon character!");
                     break;
@@ -165,7 +162,7 @@ namespace ProvidirectorGame
             state.isDirty = false;
             tier1Backlight.enabled = state.eliteTierIndex == EliteTierIndex.Tier1 || state.eliteTierIndex == EliteTierIndex.Honor1;
             tier2Backlight.enabled = state.eliteTierIndex == EliteTierIndex.Tier2;
-            pageText.text = "Page " + (state.secondPage ? "2" : "1");
+            pageText.text = string.Format("Page {0}", state.page + 1);
             switch (state.rateModifier)
             {
                 case ClientState.RateModifier.TeleporterBoosted:

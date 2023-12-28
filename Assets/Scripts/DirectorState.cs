@@ -97,7 +97,7 @@ namespace ProvidirectorGame
         }
         protected static List<SpawnCard> GetNewMonsterSelectionInternal()
         {
-            List<SpawnCard> spawnCardTemplates = new List<SpawnCard>(12);
+            List<SpawnCard> spawnCardTemplates = new List<SpawnCard>();
             spawnCardTemplates.Clear();
             if (Run.instance == null || ClassicStageInfo.instance == null || ClassicStageInfo.instance.monsterSelection == null || ClassicStageInfo.instance.monsterSelection.choices == null)
             {

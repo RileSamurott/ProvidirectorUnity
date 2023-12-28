@@ -84,20 +84,21 @@ namespace ProvidirectorGame {
         }
         protected List<CharacterMaster> spawnedCharacters;
         public static List<SpawnCardDisplayData> spawnableCharacters = new List<SpawnCardDisplayData>();
-        private bool _secondPage;
-        public bool secondPage
+        private int _page;
+        public int page
         {
-            get { return _secondPage; }
+            get { return _page; }
             set
             {
-                isDirty = true;
-                if (spawnableCharacters.Count > 6) {
-                    _secondPage = value;
+                int newpage = value % pageMax;
+                if (_page != newpage) {
+                    _page = newpage;
                     OnPageChange?.Invoke();
+                    isDirty = true;
                 }
-                else _secondPage = false;
             }
         }
+        public int pageMax => Math.Max(1, (int)Math.Ceiling(spawnableCharacters.Count / 6f));
         public bool canBurst => !(burstCharge < 100 || bursting);
 
         private GameObject _spectateTarget;
@@ -148,7 +149,8 @@ namespace ProvidirectorGame {
 
         public bool ActivateFocus(CharacterMaster c) {
             if (focusCooldownTimer <= 0f) {
-                focusTarget = c;
+                if (c != focusTarget) focusTarget = c;
+                else focusTarget = null;
                 focusCooldownTimer = 5f;
                 OnFocusTarget?.Invoke();
                 return true;
@@ -188,7 +190,7 @@ namespace ProvidirectorGame {
         }
         public int GetTrueIndex(int i)
         {
-            return i + (secondPage ? 6 : 0);
+            return i + page * 6;
         }
         public bool IsAbleToSpawn(int index, Vector3 position, Quaternion rotation, out int adjustedCost, EliteTierIndex eliteIndexOverride = EliteTierIndex.Normal)
         {
@@ -234,14 +236,14 @@ namespace ProvidirectorGame {
                     UnityAction HandleCharacterDeath = null;
                     HandleCharacterDeath = delegate () {
                         if (spawned == null) {
-                            Debug.Log("Object was destroyed immediately and is now null, cleansing all null references.");
+                            //Debug.Log("Object was destroyed immediately and is now null, cleansing all null references.");
                             spawnedCharacters.RemoveAll(delegate (CharacterMaster master) { return master == null; });
                         } else spawnedCharacters.Remove(spawned);
                         spawned?.onBodyDeath.RemoveListener(HandleCharacterDeath);
-                        Debug.LogFormat("Death: There are now {0} characters.", spawnedCharacters.Count);
+                        //Debug.LogFormat("Death: There are now {0} characters.", spawnedCharacters.Count);
                     };
                     spawnedCharacters.Add(spawned);
-                    Debug.LogFormat("Spawn: There are now {0} characters.", spawnedCharacters.Count);
+                    //Debug.LogFormat("Spawn: There are now {0} characters.", spawnedCharacters.Count);
                     spawned.onBodyDeath.AddListener(HandleCharacterDeath);
                 }
                 OnPurchaseSuccess?.Invoke(value);
@@ -249,20 +251,16 @@ namespace ProvidirectorGame {
         }
         private void ChargeOnDamage(DamageDealtMessage msg)
         {
-            if (msg == null || msg.attacker == null || rateModifier == RateModifier.Locked) return;
+            if (msg?.attacker == null || rateModifier == RateModifier.Locked) return;
             CharacterBody attackerBody = msg.attacker.GetComponent<CharacterBody>();
-            if (!attackerBody) {
-                Debug.LogError("Failed to find attacker Body from DDM.");
-                return;
-            }
-            CharacterMaster attacker = attackerBody.master;
-            if (!attacker) {
-                Debug.LogError("Failed to find attacker Master from DDM.");
-                return;
-            }
+            CharacterMaster attacker = attackerBody?.master;
+            CharacterBody victimBody = msg.victim?.GetComponent<CharacterBody>();
+            if (!(attackerBody && attacker && victimBody)) return;
             if (spawnedCharacters.Contains(attacker) && burstCharge < 100 && !bursting)
             {
-                burstCharge += msg.damage / maxBoostCharge * 100f;
+                float toAdd = msg.damage / maxBoostCharge * 100f;
+                if (!victimBody.isPlayerControlled) toAdd *= 0.333f;
+                burstCharge += toAdd;
                 if (burstCharge >= 100)
                 {
                     burstCharge = 100;
@@ -271,12 +269,13 @@ namespace ProvidirectorGame {
             }
         }
         public static SpawnCardDisplayData ExtractDisplayData(SpawnCard card) {
+            if (card == null) return new SpawnCardDisplayData();
             CharacterMaster cmprefab = card.prefab.GetComponent<CharacterMaster>();
             GameObject bodyprefab = cmprefab.bodyPrefab;
             CharacterBody b = bodyprefab.GetComponent<CharacterBody>();
             return new SpawnCardDisplayData() {
                 iconName = cmprefab.name.Replace("Master", "Icon"),
-                bodyName = Util.GetBestBodyName(bodyprefab),
+                bodyName = b.GetDisplayName(),
                 bodyColor = b.bodyColor,
                 baseMaxHealth = b.baseMaxHealth,
                 baseDamage = b.baseDamage,
@@ -286,7 +285,15 @@ namespace ProvidirectorGame {
         public static int UpdateMonsterSelection() {
             if (spawnableCharacters == null) spawnableCharacters = new List<SpawnCardDisplayData>();
             spawnableCharacters.Clear();
-            foreach (SpawnCard card in GetNewMonsterSelectionInternal()) if (card) spawnableCharacters.Add(ExtractDisplayData(card));
+            foreach (SpawnCard card in GetNewMonsterSelectionInternal())
+            {
+                if (card)
+                {
+                    SpawnCardDisplayData data = ExtractDisplayData(card);
+                    //Debug.Log(data.iconName);
+                    spawnableCharacters.Add(data);
+                }
+            }
             return spawnableCharacters.Count;
         }
     }
