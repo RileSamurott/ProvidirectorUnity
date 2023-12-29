@@ -27,6 +27,7 @@ namespace ProvidirectorGame {
                 }
             }
         }
+        
         public bool TrySpawn(int index, Vector3 position, Quaternion rotation, EliteTierIndex eliteTier, bool snappingOverride, out CharacterMaster spawned, out int trueCost)
         {
             spawned = null;
@@ -106,7 +107,7 @@ namespace ProvidirectorGame {
             return true;
         }
 
-        public int UpdateMonsterSelection() {
+        public static int UpdateMonsterSelection() {
             spawnCardTemplates = GetNewMonsterSelectionInternal();
             return spawnCardTemplates.Count;
         }

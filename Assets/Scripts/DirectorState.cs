@@ -95,6 +95,24 @@ namespace ProvidirectorGame
         {
             return pool[rng.Next(0, pool.Length)];
         }
+
+        public static SpawnCardDisplayData ExtractDisplayData(SpawnCard card)
+        {
+            if (card == null) return new SpawnCardDisplayData();
+            CharacterMaster cmprefab = card.prefab.GetComponent<CharacterMaster>();
+            GameObject bodyprefab = cmprefab.bodyPrefab;
+            CharacterBody b = bodyprefab.GetComponent<CharacterBody>();
+            return new SpawnCardDisplayData()
+            {
+                iconName = cmprefab.name.Replace("Master", "Icon"),
+                bodyName = b.GetDisplayName(),
+                bodyColor = b.bodyColor,
+                baseMaxHealth = b.baseMaxHealth,
+                baseDamage = b.baseDamage,
+                price = (int)card.directorCreditCost
+            };
+        }
+
         protected static List<SpawnCard> GetNewMonsterSelectionInternal()
         {
             List<SpawnCard> spawnCardTemplates = new List<SpawnCard>();

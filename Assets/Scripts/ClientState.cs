@@ -79,7 +79,7 @@ namespace ProvidirectorGame {
         {
             get
             {
-                return (int)instanceLevel * 50 + 200;
+                return (int)instanceLevel * 60 + 200;
             }
         }
         protected List<CharacterMaster> spawnedCharacters;
@@ -267,34 +267,6 @@ namespace ProvidirectorGame {
                     OnBurstCharged?.Invoke();
                 }
             }
-        }
-        public static SpawnCardDisplayData ExtractDisplayData(SpawnCard card) {
-            if (card == null) return new SpawnCardDisplayData();
-            CharacterMaster cmprefab = card.prefab.GetComponent<CharacterMaster>();
-            GameObject bodyprefab = cmprefab.bodyPrefab;
-            CharacterBody b = bodyprefab.GetComponent<CharacterBody>();
-            return new SpawnCardDisplayData() {
-                iconName = cmprefab.name.Replace("Master", "Icon"),
-                bodyName = b.GetDisplayName(),
-                bodyColor = b.bodyColor,
-                baseMaxHealth = b.baseMaxHealth,
-                baseDamage = b.baseDamage,
-                price = (int)card.directorCreditCost
-            };
-        }
-        public static int UpdateMonsterSelection() {
-            if (spawnableCharacters == null) spawnableCharacters = new List<SpawnCardDisplayData>();
-            spawnableCharacters.Clear();
-            foreach (SpawnCard card in GetNewMonsterSelectionInternal())
-            {
-                if (card)
-                {
-                    SpawnCardDisplayData data = ExtractDisplayData(card);
-                    //Debug.Log(data.iconName);
-                    spawnableCharacters.Add(data);
-                }
-            }
-            return spawnableCharacters.Count;
         }
     }
 }
